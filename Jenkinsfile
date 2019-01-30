@@ -10,10 +10,11 @@ node(){
 		dir("C:/Users/SESA528099/PycharmProjects/hope2/venv/Scripts") {
 		bat "activate"
 		dir("C:/Python27"){
-		bat  "IFE_performance.py"
+			bat  "IFE_performance.py"
+			}
 		}
 		
-		}		
+  	}		
 	}
 	catch (err){
 		print " Current build is a failure"
