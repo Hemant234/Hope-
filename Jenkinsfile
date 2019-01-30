@@ -5,7 +5,7 @@ node('node'){
 		}
 	stage('Env setup '){
 		env.NODE_ENV="test"
-		print "Environment will be : $(env.NODE_ENV)"
+		print "Environment will be : $env.NODE_ENV"
 		// bat '' code needs to be completed 
 		
 		bat "cd C:\Users\SESA528099\PycharmProjects\hope2\venv\Scripts"
