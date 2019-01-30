@@ -7,11 +7,11 @@ node(){
 		env.NODE_ENV="test"
 		print "Environment will be : $env.NODE_ENV"
 		// bat '' code needs to be completed 
-		
-		bat "cd C:/Users/SESA528099/PycharmProjects/hope2/venv/Scripts"
+		dir("C:/Users/SESA528099/PycharmProjects/hope2/venv/Scripts") {
 		bat "activate"
-		bat  "cd C:/Python27"
+		dir("C:/Python27"){
 		bat  "IFE_performance.py"
+		}
 		
 		}		
 	}
