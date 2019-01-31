@@ -18,7 +18,7 @@ node() {
 	}
 	
 	stage('install '){ 
-	bat "SET HTTPS_PROXY=http://165.225.104.32:80
+	//bat "SET HTTPS_PROXY=http://165.225.104.32:80
 	pip install selenium
 	pip install pymodbus
 	pip install pymodbustcp
