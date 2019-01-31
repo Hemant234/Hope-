@@ -5,7 +5,12 @@ node() {
  	}
  	
  	stage('build env'){
+ 	try{
  	bat "rmdir myproj"
+  }
+  catch(err){
+  	print " no such directory"
+  }
  	bat " virtualenv myproj --python=C:\Users\SESA528099\PycharmProjects\hope2\venv\Scripts\python.exe"
   bat " cd Scripts"
   bat "activate"
@@ -39,9 +44,23 @@ node() {
 	bat " git commit -m * "	
 	bat " git push origin master "
 	}
-	
+	stage('email '){
+		 mail body:   'project build successful',
+                     from: 'tanmaihemant09@gmail.com',
+                     subject: 'project build successful',
+                     to: 'hemantbun09@gmail.com'
+	}
 		
 
+ 	}
+ 	
+ 	catch(err){
+ 		print " current Build is a failure"
+ 		mail body:   'project build not successful',
+                     from: 'tanmaihemant09@gmail.com',
+                     subject: 'project build not successful',
+                     to: 'hemantbun09@gmail.com'
+      throw err
  	}
  		
  
